@@ -40,7 +40,6 @@ fpdf
 asyncio
 pytube
 youtube-search
-yt_dlp
 ffmpeg
 youtube-search-python
 spotdl
