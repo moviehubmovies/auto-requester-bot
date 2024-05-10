@@ -1,5 +1,5 @@
 from pyrogram import Client, __version__, filters
-from info import API_ID, API_HASH, BOT_TOKEN, PORT, ADMINS, LOG_CHANNEL, F_SUB, LOG_CHANNEL_INFORM, LOG_CHANNEL_ERROR
+from info import API_ID, API_HASH, BOT_TOKEN, PORT, ADMINS, LOG_CHANNEL
 import os, math, logging, pytz
 from datetime import date, datetime 
 from pytz import timezone
@@ -55,14 +55,6 @@ class Bot(Client):
         now = datetime.now(tz)
         time = now.strftime("%H:%M:%S %p")
         await self.send_message(chat_id=LOG_CHANNEL, text=f"**__{me.mention} Iꜱ Rᴇsᴛᴀʀᴛᴇᴅ !!**\n\n📅 Dᴀᴛᴇ : `{today}`\n⏰ Tɪᴍᴇ : `{time}`\n🌐 Tɪᴍᴇᴢᴏɴᴇ : `Asia/Kolkata`\n\n🉐 Vᴇʀsɪᴏɴ : `v{__version__} (Layer {layer})`</b>")
-        if F_SUB:
-         try:
-            link = await self.export_chat_invite_link(F_SUB)                  
-            self.invitelink = link
-         except Exception as e:
-            logging.warning(e)
-            logging.warning("Mᴀᴋᴇ Sᴜʀᴇ Bᴏᴛ ᴀᴅᴍɪɴ ɪɴ ғᴏʀᴄᴇ sᴜʙ ᴄʜᴀɴɴᴇʟ")             
-            self.f_channel = None
  
     async def stop(self, *args):
        await super().stop()      
