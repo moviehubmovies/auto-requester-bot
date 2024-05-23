@@ -21,13 +21,7 @@ logger.setLevel(logging.ERROR)
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client , message):
     if message.chat.type in [enums.ChatType.GROUP , enums.ChatType.SUPERGROUP]:
-        button = [[InlineKeyboardButton("🔸 ɢʀᴏᴜᴩ 1 🔸" , url="https://t.me/+q9PpzTvYD882OTU1") ,
-                   InlineKeyboardButton("🔸 ɢʀᴩᴜᴩ 2 🔸" , url="https://t.me/+q9PpzTvYD882OTU1")
-                   ] , [
-                      InlineKeyboardButton("🔸 ᴄʜᴀɴɴᴇʟ 1 🔸" , url="https://t.me/+1AtPM7FXm_pjNDA9") ,
-                      InlineKeyboardButton("🔸 ᴄʜᴀɴɴᴇʟ 2 🔸" , url="https://t.me/+v5I41M1IIH5iYzll")
-                  ] , [
-                      InlineKeyboardButton("🔸 ᴍᴏᴠɪᴇ ʀᴇqᴜᴇꜱᴛɪɴɢ ʙᴏᴛ 🔸" , url="https://t.me/Movie_Requesting_Robot")
+        button = [[InlineKeyboardButton("🔸 MAIN CHANNEL 1 🔸" , url="https://t.me/+S5EJw3_afjq88XPK")
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(text=script.START_TXT.format(message.from_user.mention , temp.U_NAME , temp.B_NAME) ,
@@ -44,14 +38,8 @@ async def start(client , message):
                                                            message.from_user.id))
     if len(message.command) != 2:
             mine = await client.get_me()
-            button = [[InlineKeyboardButton("🔸 ɢʀᴏᴜᴩ 1 🔸" , url="https://t.me/+q9PpzTvYD882OTU1") ,
-                       InlineKeyboardButton("🔸 ɢʀᴩᴜᴩ 2 🔸" , url="https://t.me/+q9PpzTvYD882OTU1")
-                       ] , [
-                          InlineKeyboardButton("🔸 ᴄʜᴀɴɴᴇʟ 1 🔸" , url="https://t.me/+1AtPM7FXm_pjNDA9") ,
-                          InlineKeyboardButton("🔸 ᴄʜᴀɴɴᴇʟ 2 🔸" , url="https://t.me/+v5I41M1IIH5iYzll")
-                      ] , [
-                          InlineKeyboardButton("🔸 ᴍᴏᴠɪᴇ ʀᴇqᴜᴇꜱᴛɪɴɢ ʙᴏᴛ 🔸" , url="https://t.me/Movie_Requesting_Robot")
-                      ]]
+            button = [[InlineKeyboardButton("🔸 MAIN CHANNEL 1 🔸" , url="https://t.me/+S5EJw3_afjq88XPK")
+                  ]]
             await client.send_message(chat_id=message.chat.id ,
                                       text=f"__Hello {message.from_user.mention} Iam Auto Approver Join Request Bot Just [Add Me To Your Group or Channnl](http://t.me/{mine.username}?startgroup=botstart)__" ,
                                       reply_markup=InlineKeyboardMarkup(button) , disable_web_page_preview=True)
